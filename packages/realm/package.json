@@ -90,7 +90,6 @@
     "test": {
       "command": "mocha --exit",
       "dependencies": [
-        "../fetch:build",
         "build:node",
         "bindgen:wrapper"
       ],
@@ -131,7 +130,6 @@
     "build:ts": {
       "command": "tsc --build",
       "dependencies": [
-        "../fetch:build",
         "bindgen:wrapper"
       ]
     },
@@ -216,7 +214,6 @@
     "check-circular-imports": {
       "command": "madge --circular --extensions ts src",
       "dependencies": [
-        "../fetch:build",
         "bindgen:generate:typescript",
         "bindgen:generate:node-wrapper",
         "bindgen:generate:react-native-wrapper",
@@ -231,7 +228,6 @@
     }
   },
   "dependencies": {
-    "@realm/fetch": "^0.1.1",
     "bson": "^4.7.2",
     "debug": "^4.3.4",
     "node-machine-id": "^1.1.12",

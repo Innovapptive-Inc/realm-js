@@ -21,6 +21,4 @@ export { binding } from "./platform/binding";
 /** @internal */
 export { fs } from "./platform/file-system";
 /** @internal */
-export { network } from "./platform/network";
-/** @internal */
 export { garbageCollection } from "./platform/garbage-collection";

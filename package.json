@@ -41,7 +41,6 @@
   "workspaces": [
     "packages/realm/bindgen/",
     "packages/realm/bindgen/vendor/realm-core/",
-    "packages/fetch",
     "packages/realm",
     "packages/realm-common",
     "packages/realm-react",
