@@ -74,6 +74,7 @@
     "test:types": "tsc --project type-tests/tsconfig.json",
     "lint": "eslint --ext .js,.mjs,.ts .",
     "prebuild": "tsx ./src/scripts/build/cli.ts",
+    "apply-core-patches": "wireit",
     "prebuild-apple": "wireit",
     "prebuild-apple:simulator": "wireit",
     "prebuild-android": "wireit",
@@ -88,6 +89,9 @@
     "docs": "wireit"
   },
   "wireit": {
+    "apply-core-patches": {
+      "command": "node ./scripts/apply-core-patches.js"
+    },
     "test": {
       "command": "mocha --exit",
       "dependencies": [
@@ -100,6 +104,9 @@
     },
     "prebuild-apple": {
       "command": "tsx ./src/scripts/build/cli.ts build-apple",
+      "dependencies": [
+        "apply-core-patches"
+      ],
       "files": [
         "bindgen/vendor/realm-core/src",
         "src/scripts"
@@ -110,6 +117,9 @@
     },
     "prebuild-apple:simulator": {
       "command": "tsx ./src/scripts/build/cli.ts build-apple --platform iphonesimulator --configuration Debug",
+      "dependencies": [
+        "apply-core-patches"
+      ],
       "files": [
         "bindgen/vendor/realm-core/src",
         "src/scripts"
@@ -120,6 +130,9 @@
     },
     "prebuild-android": {
       "command": "tsx ./src/scripts/build/cli.ts build-android",
+      "dependencies": [
+        "apply-core-patches"
+      ],
       "files": [
         "bindgen/vendor/realm-core/src",
         "src/scripts"
@@ -135,7 +148,10 @@
       ]
     },
     "bindgen:configure": {
-      "command": "cmake-js configure --debug --directory binding/node"
+      "command": "cmake-js configure --debug --directory binding/node",
+      "dependencies": [
+        "apply-core-patches"
+      ]
     },
     "bindgen:build:node": {
       "command": "cmake --build binding/node/build --target realm-js-node",
@@ -199,6 +215,9 @@
     },
     "prebuild-node": {
       "command": "cross-env-shell prebuild --runtime napi --target 6 --arch $PREBUILD_ARCH -- --directory binding/node",
+      "dependencies": [
+        "apply-core-patches"
+      ],
       "env": {
         "PREBUILD_ARCH": {
           "external": true,

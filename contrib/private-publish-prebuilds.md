@@ -44,7 +44,35 @@ npm run prebuild-android --workspace @innovapptive/realm
 Known local build notes:
 
 - Pass `--target 6` for N-API (handled by the `prebuild-node` script). Newer Node + `napi-build-utils` can fail auto-detection via string comparison.
-- On newer Apple SDKs, realm-core may need `#include <cstdlib>` in `cli_args.cpp` (already fixed upstream in later core commits).
+
+## realm-core patches
+
+`realm-core` is a Git submodule pinned by the upstream `community` branch, so we
+cannot carry small build fixes by editing its files directly (submodule working
+tree changes are not tracked by the parent repo). Instead, patches live in:
+
+```
+packages/realm/patches/realm-core/*.patch
+```
+
+They are applied idempotently by `scripts/apply-core-patches.js`, which runs
+automatically as a Wireit dependency of every native build
+(`prebuild-node`, `prebuild-apple`, `prebuild-android`, `bindgen:configure`).
+You can also run it manually:
+
+```bash
+npm run apply-core-patches --workspace @innovapptive/realm
+```
+
+Current patches:
+
+- `0001-cli_args-include-cstdlib.patch` — adds `#include <cstdlib>` to
+  `cli_args.cpp` (needed on newer Apple/toolchain SDKs; fixed upstream in later
+  core commits).
+
+When bumping the realm-core submodule, re-run a native build; if a patch no
+longer applies cleanly the script fails loudly, and the patch should be dropped
+(already upstream) or regenerated against the new commit.
 
 Then publish `@innovapptive/realm` (and `@innovapptive/realm-react`) to your private registry.
 
