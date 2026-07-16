@@ -7,7 +7,6 @@
       "es2021",
     ],
     "types": [
-      "@innovapptive/realm",
       "react"
     ],
     "esModuleInterop": true,

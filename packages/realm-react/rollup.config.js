@@ -38,6 +38,6 @@ export default [
       },
     ],
     plugins: [nodeResolve(), commonjs(), typescript({ noEmitOnError: true })],
-    external: ["@innovapptive/realm", "react", "@realm/common"],
+    external: ["@innovapptive.com/realm", "react", "@realm/common"],
   },
 ];

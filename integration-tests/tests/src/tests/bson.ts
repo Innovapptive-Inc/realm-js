@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 import { expect } from "chai";
-import Realm, { BSON } from '@innovapptive/realm';
+import Realm, { BSON } from '@innovapptive.com/realm';
 import { openRealmBeforeEach } from "../hooks";
 
 const Decimal128ObjectSchema = {

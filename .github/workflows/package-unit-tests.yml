@@ -36,8 +36,8 @@ jobs:
       fail-fast: false
       matrix:
         workspace:
-          - '@innovapptive/realm'
-          - '@innovapptive/realm-react'
+          - '@innovapptive.com/realm'
+          - '@innovapptive.com/realm-react'
     name: ${{ matrix.workspace }} unit tests
     runs-on: ubuntu-latest
     steps:

@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import assert from "node:assert";
-import Realm, { Configuration } from '@innovapptive/realm';
+import Realm, { Configuration } from '@innovapptive.com/realm';
 import { act } from "@testing-library/react-native";
 
 import { randomRealmPath } from "./helpers";

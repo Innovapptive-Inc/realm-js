@@ -58,7 +58,7 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Generate JSI
         run: |
-          npm run bindgen:jsi --workspace @innovapptive/realm
+          npm run bindgen:jsi --workspace @innovapptive.com/realm
       - name: Upload dist artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -202,7 +202,7 @@ jobs:
           echo 'VCPKG_KEEP_ENV_VARS=CCACHE_COMPILER;CCACHE_STATSLOG;CCACHE_LOGFILE;CCACHE_COMPILERTYPE;UseMultiToolTask' >> $GITHUB_ENV
 
       - name: Build native module
-        run: npm run prebuild-node --workspace @innovapptive/realm
+        run: npm run prebuild-node --workspace @innovapptive.com/realm
         env:
           PREBUILD_ARCH: ${{ matrix.arch }}
 
@@ -250,7 +250,7 @@ jobs:
         # Ignoring scripts to prevent a prebuild from getting fetched / built
         run: npm ci --ignore-scripts
       - name: Build archive
-        run: npm run prebuild-apple --workspace @innovapptive/realm -- --platform ${{ matrix.platform }} --skip-creating-xcframework
+        run: npm run prebuild-apple --workspace @innovapptive.com/realm -- --platform ${{ matrix.platform }} --skip-creating-xcframework
       - name: Upload archive
         uses: actions/upload-artifact@v4
         with:
@@ -285,7 +285,7 @@ jobs:
           pattern: apple-*-archive
           merge-multiple: true
       - name: Create Xcframework
-        run: npm run prebuild-apple --workspace @innovapptive/realm -- --platform none --skip-collecting-headers
+        run: npm run prebuild-apple --workspace @innovapptive.com/realm -- --platform none --skip-collecting-headers
       - uses: actions/upload-artifact@v4
         with:
           name: apple-prebuild
@@ -349,7 +349,7 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Build archive
-        run: npm run prebuild-android --workspace @innovapptive/realm -- --architecture ${{ matrix.architecture }} --configuration Release
+        run: npm run prebuild-android --workspace @innovapptive.com/realm -- --architecture ${{ matrix.architecture }} --configuration Release
 
       - name: Upload archive
         uses: actions/upload-artifact@v4

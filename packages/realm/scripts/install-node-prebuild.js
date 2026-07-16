@@ -27,7 +27,7 @@ const path = require("path");
 
 const packageRoot = path.join(__dirname, "..");
 const prebuildsDir = path.join(packageRoot, "prebuilds");
-const scopedPrebuildsDir = path.join(prebuildsDir, "@innovapptive");
+const scopedPrebuildsDir = path.join(prebuildsDir, "@innovapptive.com");
 const localNodeBinary = path.join(prebuildsDir, "node", "realm.node");
 
 function listTarGz(dir) {
@@ -58,23 +58,23 @@ const { dir: localPrebuildsDir, archives: localPrebuilds } = resolveLocalPrebuil
 if (!localPrebuildsDir) {
   console.error(
     [
-      "@innovapptive/realm: no packaged Node prebuilds were found under prebuilds/.",
+      "@innovapptive.com/realm: no packaged Node prebuilds were found under prebuilds/.",
       "This private distribution expects platform archives such as:",
-      "  prebuilds/@innovapptive/realm-v<version>-napi-v6-<platform>-<arch>.tar.gz",
+      "  prebuilds/@innovapptive.com/realm-v<version>-napi-v6-<platform>-<arch>.tar.gz",
       "Build them before publish, for example:",
-      "  npm run prebuild-node --workspace @innovapptive/realm",
+      "  npm run prebuild-node --workspace @innovapptive.com/realm",
     ].join("\n"),
   );
   process.exit(1);
 }
 
 // Scoped npm package names make `prebuild` write archives under
-// prebuilds/@innovapptive/. Point prebuild-install at that directory.
+// prebuilds/@innovapptive.com/. Point prebuild-install at that directory.
 // Pass an explicit N-API target: napi-build-utils string-compares versions and
 // can fail to pick N-API 6 on newer Node releases.
 const env = {
   ...process.env,
-  npm_config_innovapptive_realm_local_prebuilds: localPrebuildsDir,
+  npm_config_innovapptive_com_realm_local_prebuilds: localPrebuildsDir,
 };
 
 const result = spawnSync(
@@ -89,14 +89,14 @@ const result = spawnSync(
 );
 
 if (result.error) {
-  console.error("@innovapptive/realm: failed to run prebuild-install:", result.error.message);
+  console.error("@innovapptive.com/realm: failed to run prebuild-install:", result.error.message);
   process.exit(1);
 }
 
 if (result.status !== 0) {
   console.error(
     [
-      "@innovapptive/realm: could not install a Node native prebuild for this platform.",
+      "@innovapptive.com/realm: could not install a Node native prebuild for this platform.",
       `Found packaged archives in ${path.relative(packageRoot, localPrebuildsDir)}: ${localPrebuilds.join(", ")}`,
       "Ensure a matching prebuild was included for your OS/arch before publishing.",
     ].join("\n"),

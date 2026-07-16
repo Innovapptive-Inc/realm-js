@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { act } from "@testing-library/react-native";
-import { EstimateProgressNotificationCallback, ProgressRealmPromise, Realm } from '@innovapptive/realm';
+import { EstimateProgressNotificationCallback, ProgressRealmPromise, Realm } from '@innovapptive.com/realm';
 import { sleep } from "./helpers";
 
 /**

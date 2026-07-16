@@ -1,5 +1,5 @@
 {
-  "name": "@innovapptive/realm",
+  "name": "@innovapptive.com/realm",
   "version": "20.2.0",
   "description": "Realm by MongoDB is an offline-first mobile database: an alternative to SQLite and key-value stores",
   "license": "apache-2.0",
@@ -62,7 +62,7 @@
     "prebuilds/apple",
     "prebuilds/android",
     "prebuilds/realm-*.tar.gz",
-    "prebuilds/@innovapptive/*.tar.gz",
+    "prebuilds/@innovapptive.com/*.tar.gz",
     "index.react-native.js",
     "react-native.config.js",
     "RealmJS.podspec",
@@ -281,6 +281,10 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",

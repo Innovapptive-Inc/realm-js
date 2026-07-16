@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm, { BSON, Counter, ObjectSchema, UpdateMode } from '@innovapptive/realm';
+import Realm, { BSON, Counter, ObjectSchema, UpdateMode } from '@innovapptive.com/realm';
 
 import { openRealmBeforeEach } from "../hooks";
 import { expectCounter, expectRealmDictionary, expectRealmList, expectRealmSet } from "../utils/expects";

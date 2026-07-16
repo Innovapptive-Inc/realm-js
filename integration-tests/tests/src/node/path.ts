@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm, { BSON } from '@innovapptive/realm';
+import Realm, { BSON } from '@innovapptive.com/realm';
 import path from "node:path";
 import os from "node:os";
 

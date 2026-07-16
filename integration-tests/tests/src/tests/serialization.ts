@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm from '@innovapptive/realm';
+import Realm from '@innovapptive.com/realm';
 
 type DefaultObject = Record<string, unknown>;
 

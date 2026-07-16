@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm, { Configuration } from '@innovapptive/realm';
+import Realm, { Configuration } from '@innovapptive.com/realm';
 
 import { openRealm } from "../utils/open-realm";
 

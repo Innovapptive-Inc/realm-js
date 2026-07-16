@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm, { Collection, Dictionary, OrderedCollection } from '@innovapptive/realm';
+import Realm, { Collection, Dictionary, OrderedCollection } from '@innovapptive.com/realm';
 import { openRealmBefore } from "../hooks";
 
 // TODO: Add the use of Object.keys(), Object.values() and Object.entries()

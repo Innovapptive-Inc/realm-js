@@ -1,19 +1,19 @@
 # Private publish: native prebuilds (Option A)
 
-`@innovapptive/realm` ships native binaries **inside the npm package**.
+`@innovapptive.com/realm` ships native binaries **inside the npm package**.
 Node installs must not download from MongoDB (`static.realm.io`).
 
 ## What gets packaged
 
 | Target | Artifacts | Included via `files` |
 |--------|-----------|----------------------|
-| Node.js | `prebuilds/@innovapptive/realm-v*-napi-v6-*.tar.gz` | `prebuilds/@innovapptive/*.tar.gz` |
+| Node.js | `prebuilds/@innovapptive.com/realm-v*-napi-v6-*.tar.gz` | `prebuilds/@innovapptive.com/*.tar.gz` |
 | React Native iOS | `prebuilds/apple/realm-core.xcframework` | `prebuilds/apple` |
 | React Native Android | `prebuilds/android/<abi>/` | `prebuilds/android` |
 
 On `npm install`, Node runs `scripts/install-node-prebuild.js`, which unpacks the matching local archive into `prebuilds/node/realm.node`.
 
-> Note: because the npm package is scoped (`@innovapptive/realm`), the `prebuild` tool writes Node archives under `prebuilds/@innovapptive/`.
+> Note: because the npm package is scoped (`@innovapptive.com/realm`), the `prebuild` tool writes Node archives under `prebuilds/@innovapptive.com/`.
 
 ## Minimum platform matrix (recommended)
 
@@ -29,16 +29,16 @@ From the repo root (submodules initialized, dependencies installed):
 
 ```bash
 # TypeScript / bindings
-npm run build:ts --workspace @innovapptive/realm
-npm run bindgen:jsi --workspace @innovapptive/realm
+npm run build:ts --workspace @innovapptive.com/realm
+npm run bindgen:jsi --workspace @innovapptive.com/realm
 
 # Node prebuilds (set PREBUILD_ARCH when cross-compiling; default is arm64)
-PREBUILD_ARCH=arm64 npm run prebuild-node --workspace @innovapptive/realm
-PREBUILD_ARCH=x64 npm run prebuild-node --workspace @innovapptive/realm   # e.g. on linux CI
+PREBUILD_ARCH=arm64 npm run prebuild-node --workspace @innovapptive.com/realm
+PREBUILD_ARCH=x64 npm run prebuild-node --workspace @innovapptive.com/realm   # e.g. on linux CI
 
 # React Native prebuilds
-npm run prebuild-apple --workspace @innovapptive/realm
-npm run prebuild-android --workspace @innovapptive/realm
+npm run prebuild-apple --workspace @innovapptive.com/realm
+npm run prebuild-android --workspace @innovapptive.com/realm
 ```
 
 Known local build notes:
@@ -61,7 +61,7 @@ automatically as a Wireit dependency of every native build
 You can also run it manually:
 
 ```bash
-npm run apply-core-patches --workspace @innovapptive/realm
+npm run apply-core-patches --workspace @innovapptive.com/realm
 ```
 
 Current patches:
@@ -74,10 +74,10 @@ When bumping the realm-core submodule, re-run a native build; if a patch no
 longer applies cleanly the script fails loudly, and the patch should be dropped
 (already upstream) or regenerated against the new commit.
 
-Then publish `@innovapptive/realm` (and `@innovapptive/realm-react`) to your private registry.
+Then publish `@innovapptive.com/realm` (and `@innovapptive.com/realm-react`) to your private registry.
 
 ## Install behavior
 
-- Local archives under `prebuilds/@innovapptive/` (or flat `prebuilds/`) are required for Node.
+- Local archives under `prebuilds/@innovapptive.com/` (or flat `prebuilds/`) are required for Node.
 - Missing archives fail install with an explicit error (no silent MongoDB fallback).
 - Analytics `postinstall` is disabled for this private fork.

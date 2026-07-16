@@ -71,7 +71,7 @@
     }
   },
   "peerDependencies": {
-    "@innovapptive/realm": "*"
+    "@innovapptive.com/realm": "*"
   },
   "devDependencies": {
     "@realm/app-importer": "*",
@@ -83,7 +83,7 @@
     "@types/sinon-chai": "3.2.12",
     "nyc": "^15.1.0",
     "platform": "^1.3.6",
-    "@innovapptive/realm": "*"
+    "@innovapptive.com/realm": "*"
   },
   "dependencies": {
     "@thi.ng/bench": "^3.6.28",

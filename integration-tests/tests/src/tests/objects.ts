@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 import { expect } from "chai";
-import Realm, { BSON, UpdateMode } from '@innovapptive/realm';
+import Realm, { BSON, UpdateMode } from '@innovapptive.com/realm';
 
 import { IPerson, Person, PersonSchema } from "../schemas/person-and-dogs";
 import {

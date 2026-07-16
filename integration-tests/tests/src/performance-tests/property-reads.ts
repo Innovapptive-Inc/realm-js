@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm, { BSON, ObjectSchema, PropertySchema, PropertySchemaShorthand } from '@innovapptive/realm';
+import Realm, { BSON, ObjectSchema, PropertySchema, PropertySchemaShorthand } from '@innovapptive.com/realm';
 
 import { describePerformance } from "../utils/benchmark";
 

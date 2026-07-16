@@ -17,11 +17,11 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm from '@innovapptive/realm';
+import Realm from '@innovapptive.com/realm';
 
 import { openRealmBefore, openRealmBeforeEach } from "../hooks";
 import { createLocalConfig } from "../utils/open-realm";
-import { LogEntry } from '@innovapptive/realm';
+import { LogEntry } from '@innovapptive.com/realm';
 
 describe("SharedRealm operations", () => {
   describe("logger", () => {

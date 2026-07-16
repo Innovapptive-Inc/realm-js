@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm, { PropertySchema } from '@innovapptive/realm';
+import Realm, { PropertySchema } from '@innovapptive.com/realm';
 
 import { openRealmBefore, openRealmBeforeEach } from "../hooks";
 

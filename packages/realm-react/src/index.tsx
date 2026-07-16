@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm from '@innovapptive/realm';
+import Realm from '@innovapptive.com/realm';
 import React from "react";
 import { createRealmContext } from "./RealmContext";
 

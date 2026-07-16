@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import { NumericLogLevel } from '@innovapptive/realm';
+import { NumericLogLevel } from '@innovapptive.com/realm';
 
 describe("Enums", function () {
   describe("NumericLogLevel", function () {

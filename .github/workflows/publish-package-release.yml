@@ -15,11 +15,11 @@ on:
       package:
         description: 'Package'
         required: true
-        default: '@innovapptive/realm'
+        default: '@innovapptive.com/realm'
         type: choice
         options:
         - '@realm/common'
-        - '@innovapptive/realm-react'
+        - '@innovapptive.com/realm-react'
         - '@realm/tools'
         - '@realm/web'
 
@@ -46,10 +46,10 @@ jobs:
               "RELEASE_TITLE": "Realm Common",
               "SDK_NAME": "Common"
             },
-            "@innovapptive/realm-react": {
+            "@innovapptive.com/realm-react": {
               "PACKAGE_PATH": "packages/realm-react",
               "PREPARE_SCRIPT_NAME": "bundle",
-              "PACKAGE_NAME": "@innovapptive/realm-react",
+              "PACKAGE_NAME": "@innovapptive.com/realm-react",
               "VERSION_PREFIX": "realm-react-",
               "RELEASE_TITLE": "Realm React",
               "SDK_NAME": "React"

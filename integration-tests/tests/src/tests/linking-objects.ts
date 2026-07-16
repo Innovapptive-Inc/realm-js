@@ -16,9 +16,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import { BSON } from '@innovapptive/realm';
+import { BSON } from '@innovapptive.com/realm';
 import { expect } from "chai";
-import Realm from '@innovapptive/realm';
+import Realm from '@innovapptive.com/realm';
 import { openRealmBeforeEach } from "../hooks";
 
 function names(results: Realm.OrderedCollection<Person> | Realm.Results<Person>) {
