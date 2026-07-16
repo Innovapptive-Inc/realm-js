@@ -18,7 +18,6 @@ on:
         default: 'realm'
         type: choice
         options:
-        - '@realm/babel-plugin'
         - '@realm/common'
         - '@realm/react'
         - '@realm/tools'
@@ -38,16 +37,8 @@ jobs:
       name: Map package to environment variables
       with:
         key: "${{inputs.package}}"
-        map: |
+          map: |
           {
-            "@realm/babel-plugin": {
-              "PACKAGE_PATH": "packages/babel-plugin",
-              "PREPARE_SCRIPT_NAME": "bundle",
-              "PACKAGE_NAME": "@realm/babel-plugin",
-              "VERSION_PREFIX": "babel-plugin-",
-              "RELEASE_TITLE": "Realm Babel Plugin",
-              "SDK_NAME": "Babel Plugin"
-            },
             "@realm/common": {
               "PACKAGE_PATH": "packages/realm-common",
               "PREPARE_SCRIPT_NAME": "bundle",

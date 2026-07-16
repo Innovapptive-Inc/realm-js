@@ -16,7 +16,6 @@
     "build": {
       "dependencies": [
         "./packages/realm:build:ts",
-        "./packages/babel-plugin:bundle",
         "./packages/mocha-reporter:bundle",
         "./packages/realm-react:bundle",
         "./packages/realm-tools:build",
@@ -24,16 +23,10 @@
       ]
     },
     "lint": {
-      "command": "npm run lint --workspaces --if-present && trunk check --all",
-      "dependencies": [
-        "./packages/babel-plugin:bundle"
-      ]
+      "command": "npm run lint --workspaces --if-present && trunk check --all"
     },
     "lint:fix": {
-      "command": "npm run lint --workspaces --if-present -- --fix && trunk fmt",
-      "dependencies": [
-        "./packages/babel-plugin:bundle"
-      ]
+      "command": "npm run lint --workspaces --if-present -- --fix && trunk fmt"
     }
   },
   "engines": {
@@ -48,7 +41,6 @@
   "workspaces": [
     "packages/realm/bindgen/",
     "packages/realm/bindgen/vendor/realm-core/",
-    "packages/babel-plugin",
     "packages/fetch",
     "packages/realm",
     "packages/realm-common",
