@@ -62,6 +62,7 @@
     "prebuilds/apple",
     "prebuilds/android",
     "prebuilds/realm-*.tar.gz",
+    "prebuilds/@innovapptive/*.tar.gz",
     "index.react-native.js",
     "react-native.config.js",
     "RealmJS.podspec",
@@ -197,11 +198,11 @@
       ]
     },
     "prebuild-node": {
-      "command": "cross-env-shell prebuild --runtime napi --arch $PREBUILD_ARCH -- --directory binding/node",
+      "command": "cross-env-shell prebuild --runtime napi --target 6 --arch $PREBUILD_ARCH -- --directory binding/node",
       "env": {
         "PREBUILD_ARCH": {
           "external": true,
-          "default": "undefined"
+          "default": "arm64"
         }
       }
     },
