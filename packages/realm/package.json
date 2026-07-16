@@ -61,6 +61,7 @@
     "bindgen/vendor/realm-core/bindgen/src/realm_helpers.h",
     "prebuilds/apple",
     "prebuilds/android",
+    "prebuilds/realm-*.tar.gz",
     "index.react-native.js",
     "react-native.config.js",
     "RealmJS.podspec",
@@ -82,9 +83,8 @@
     "bindgen:wrapper": "wireit",
     "check-types": "wireit",
     "check-circular-imports": "wireit",
-    "install": "prebuild-install --runtime napi || echo 'Failed to download prebuild for Realm'",
-    "docs": "wireit",
-    "postinstall": "node ./scripts/submit-analytics.js"
+    "install": "node ./scripts/install-node-prebuild.js",
+    "docs": "wireit"
   },
   "wireit": {
     "test": {
@@ -270,8 +270,6 @@
   "binary": {
     "module_name": "realm",
     "module_path": "prebuilds/node",
-    "host": "https://static.realm.io",
-    "remote_path": "realm-js-prebuilds/{version}",
     "napi_versions": [
       6
     ]
