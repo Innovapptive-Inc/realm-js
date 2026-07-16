@@ -17,7 +17,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm from "realm";
+import Realm from '@innovapptive/realm';
 import { ArgumentConfig, parse } from "ts-command-line-args";
 import * as fs from "fs";
 

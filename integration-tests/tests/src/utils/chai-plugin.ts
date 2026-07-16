@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import { Collection, Object as RealmObject } from "realm";
+import { Collection, Object as RealmObject } from '@innovapptive/realm';
 
 function isRealmObject(arg: unknown): arg is RealmObject & Record<string, unknown> {
   return arg instanceof RealmObject;

@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm from "realm";
+import Realm from '@innovapptive/realm';
 
 import { openRealmBefore } from "../hooks";
 

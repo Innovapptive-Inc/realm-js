@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm from "realm";
+import Realm from '@innovapptive/realm';
 
 const BASE_PATH = "icloud-backup-tests";
 

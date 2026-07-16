@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 ////////////////////////////////////////////////////////////////////////////
-import Realm from "realm";
+import Realm from '@innovapptive/realm';
 import { expect } from "chai";
 import { DogSchema, IDog, IPerson, PersonSchema } from "../schemas/person-and-dogs";
 

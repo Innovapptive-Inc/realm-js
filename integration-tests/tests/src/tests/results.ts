@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm, { BSON } from "realm";
+import Realm, { BSON } from '@innovapptive/realm';
 import { openRealmBeforeEach } from "../hooks";
 const { Decimal128, ObjectId, UUID } = Realm.BSON;
 

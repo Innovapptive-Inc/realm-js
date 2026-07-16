@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 // Either the sync property is left out (local Realm)
-import Realm, { Configuration, BSON } from "realm";
+import Realm, { Configuration, BSON } from '@innovapptive/realm';
 
 /**
  * Open a Realm for test usage with the specified config. By default this will use

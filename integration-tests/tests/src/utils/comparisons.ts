@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import { BSON } from "realm";
+import { BSON } from '@innovapptive/realm';
 import { expect } from "chai";
 type BSONType = BSON.Decimal128 | BSON.ObjectId | BSON.UUID | null;
 

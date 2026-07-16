@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm from "realm";
+import Realm from '@innovapptive/realm';
 import { renderHook } from "@testing-library/react-native";
 
 import { createUseQuery } from "../useQuery";

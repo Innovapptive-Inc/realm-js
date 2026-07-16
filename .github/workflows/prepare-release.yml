@@ -31,7 +31,7 @@ jobs:
           changelog: ${{ github.workspace }}/CHANGELOG.md
 
       - name: Update version
-        run: npm version ${{ steps.update-changelog.outputs.new-version }} --workspace realm
+        run: npm version ${{ steps.update-changelog.outputs.new-version }} --workspace @innovapptive/realm
 
       - name: Create Release PR
         uses: peter-evans/create-pull-request@v5.0.0

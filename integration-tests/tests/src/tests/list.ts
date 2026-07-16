@@ -16,10 +16,10 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm, { BSON } from "realm";
+import Realm, { BSON } from '@innovapptive/realm';
 import { expectArraysEqual, expectSimilar } from "../utils/comparisons";
 import { expect } from "chai";
-import { CanonicalObjectSchema } from "realm";
+import { CanonicalObjectSchema } from '@innovapptive/realm';
 import { openRealmBeforeEach, openRealmBefore } from "../hooks";
 
 const DATA1 = new Uint8Array([0x01]);

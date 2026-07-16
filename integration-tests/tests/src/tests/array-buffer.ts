@@ -18,7 +18,7 @@
 
 import { Buffer } from "buffer";
 import { expect } from "chai";
-import Realm from "realm";
+import Realm from '@innovapptive/realm';
 import { openRealmBeforeEach } from "../hooks";
 
 const SingleSchema: Realm.ObjectSchema = {

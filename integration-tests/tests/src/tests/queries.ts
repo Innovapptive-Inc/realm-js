@@ -15,7 +15,7 @@
 // limitations under the License.
 //
 ////////////////////////////////////////////////////////////////////////////
-import Realm, { BSON } from "realm";
+import Realm, { BSON } from '@innovapptive/realm';
 import { expect } from "chai";
 import { openRealmBeforeEach } from "../hooks";
 import { ContactSchema, IContact } from "../schemas/contact";

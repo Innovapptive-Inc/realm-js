@@ -26,7 +26,7 @@ import {
   createRealmProvider,
 } from "./RealmProvider";
 import { createContext } from "react";
-import Realm from "realm";
+import Realm from '@innovapptive/realm';
 
 export type RealmContext<RealmProvider = DynamicRealmProvider> = {
   /**

@@ -10,11 +10,11 @@ on:
       package:
         description: 'Package'
         required: true
-        default: 'realm'
+        default: '@innovapptive/realm'
         type: choice
         options:
         - '@realm/common'
-        - '@realm/react'
+        - '@innovapptive/realm-react'
         - '@realm/tools'
         - '@realm/web'
 
@@ -34,9 +34,9 @@ jobs:
                 "PACKAGE_NAME": "@realm/common",
                 "VERSION_PREFIX": "realm-common-"
               },
-              "@realm/react": {
+              "@innovapptive/realm-react": {
                 "PACKAGE_PATH": "packages/realm-react",
-                "PACKAGE_NAME": "@realm/react",
+                "PACKAGE_NAME": "@innovapptive/realm-react",
                 "VERSION_PREFIX": "realm-react-"
               },
               "@realm/tools": {

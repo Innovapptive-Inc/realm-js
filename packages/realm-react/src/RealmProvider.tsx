@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import React, { useContext, useEffect, useRef, useState } from "react";
-import Realm from "realm";
+import Realm from '@innovapptive/realm';
 import isEqual from "lodash.isequal";
 
 import { RestrictivePick } from "./helpers";

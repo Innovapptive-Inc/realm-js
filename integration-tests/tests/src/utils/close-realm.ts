@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm, { Configuration } from "realm";
+import Realm, { Configuration } from '@innovapptive/realm';
 
 function deriveConfig(realm: Realm): Configuration {
   const { path } = realm;

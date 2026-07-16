@@ -24,7 +24,7 @@
 
 import { assert, expect } from "chai";
 
-import Realm, { CollectionChangeSet, DictionaryChangeSet, ObjectChangeSet, ObjectSchema, RealmEventName } from "realm";
+import Realm, { CollectionChangeSet, DictionaryChangeSet, ObjectChangeSet, ObjectSchema, RealmEventName } from '@innovapptive/realm';
 
 import { openRealmBeforeEach } from "../hooks";
 import { createListenerStub } from "../utils/listener-stub";

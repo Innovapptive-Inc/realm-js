@@ -51,7 +51,7 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "realm": "*",
+    "@innovapptive/realm": "*",
     "ts-command-line-args": "^2.2.1"
   },
   "devDependencies": {

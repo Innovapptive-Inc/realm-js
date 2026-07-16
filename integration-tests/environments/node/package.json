@@ -32,7 +32,7 @@
     "mocha-github-actions-reporter": "^0.3.1",
     "mocha-remote-cli": "^1.12.3",
     "mocha-remote-client": "^1.12.3",
-    "realm": "*"
+    "@innovapptive/realm": "*"
   },
   "devDependencies": {
     "@realm/app-importer": "*",

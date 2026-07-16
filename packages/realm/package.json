@@ -1,5 +1,5 @@
 {
-  "name": "realm",
+  "name": "@innovapptive/realm",
   "version": "20.2.0",
   "description": "Realm by MongoDB is an offline-first mobile database: an alternative to SQLite and key-value stores",
   "license": "apache-2.0",
@@ -264,7 +264,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/realm/realm-js.git",
+    "url": "https://github.com/Innovapptive-Inc/realm-js.git",
     "directory": "packages/realm"
   },
   "binary": {
