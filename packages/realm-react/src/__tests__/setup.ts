@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 Realm.flags.THROW_ON_GLOBAL_REALM = true;
 // Enable calling Realm.clearTestState()
 Realm.flags.ALLOW_CLEAR_TEST_STATE = true;

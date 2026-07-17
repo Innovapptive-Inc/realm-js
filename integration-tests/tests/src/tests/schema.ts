@@ -18,7 +18,7 @@
 
 import { expect } from "chai";
 import { openRealmBefore } from "../hooks";
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 
 interface Test {
   primary: number;

@@ -10,15 +10,13 @@ on:
       package:
         description: 'Package'
         required: true
-        default: 'realm'
+        default: '@innovapptive.com/realm'
         type: choice
         options:
-        - '@realm/babel-plugin'
         - '@realm/common'
-        - '@realm/react'
+        - '@innovapptive.com/realm-react'
         - '@realm/tools'
         - '@realm/web'
-        - '@realm/fetch'
 
 jobs:
   prepare-package-release:
@@ -31,19 +29,14 @@ jobs:
           key: "${{inputs.package}}"
           map: |
             {
-              "@realm/babel-plugin": {
-                "PACKAGE_PATH": "packages/babel-plugin",
-                "PACKAGE_NAME": "@realm/babel-plugin",
-                "VERSION_PREFIX": "babel-plugin-"
-              },
               "@realm/common": {
                 "PACKAGE_PATH": "packages/realm-common",
                 "PACKAGE_NAME": "@realm/common",
                 "VERSION_PREFIX": "realm-common-"
               },
-              "@realm/react": {
+              "@innovapptive.com/realm-react": {
                 "PACKAGE_PATH": "packages/realm-react",
-                "PACKAGE_NAME": "@realm/react",
+                "PACKAGE_NAME": "@innovapptive.com/realm-react",
                 "VERSION_PREFIX": "realm-react-"
               },
               "@realm/tools": {
@@ -55,11 +48,6 @@ jobs:
                 "PACKAGE_PATH": "packages/realm-web",
                 "PACKAGE_NAME": "realm-web",
                 "VERSION_PREFIX": "realm-web-"
-              },
-              "@realm/fetch": {
-                "PACKAGE_PATH": "packages/fetch",
-                "PACKAGE_NAME": "@realm/fetch",
-                "VERSION_PREFIX": "realm-fetch-"
               }
             }
       - name: Checkout Code

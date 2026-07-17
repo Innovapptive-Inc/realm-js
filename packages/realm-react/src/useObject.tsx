@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { useEffect, useMemo, useReducer, useRef } from "react";
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 
 import { CachedObject, createCachedObject } from "./cachedObject";
 import {

@@ -18,7 +18,7 @@
 
 /* tslint:disable max-classes-per-file */
 
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 
 export interface IPerson {
   _id: Realm.BSON.ObjectId;

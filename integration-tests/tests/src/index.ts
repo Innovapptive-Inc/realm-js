@@ -18,7 +18,7 @@
 
 console.log("Loading Realm Integration Tests");
 
-import { flags } from "realm";
+import { flags } from '@innovapptive.com/realm';
 
 // TODO: Refactor tests to disable this
 flags.ALLOW_VALUES_ARRAYS = true;

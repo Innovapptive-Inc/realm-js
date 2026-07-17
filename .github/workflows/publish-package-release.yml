@@ -15,15 +15,13 @@ on:
       package:
         description: 'Package'
         required: true
-        default: 'realm'
+        default: '@innovapptive.com/realm'
         type: choice
         options:
-        - '@realm/babel-plugin'
         - '@realm/common'
-        - '@realm/react'
+        - '@innovapptive.com/realm-react'
         - '@realm/tools'
         - '@realm/web'
-        - '@realm/fetch'
 
 jobs:
   publish-package-release:
@@ -38,16 +36,8 @@ jobs:
       name: Map package to environment variables
       with:
         key: "${{inputs.package}}"
-        map: |
+          map: |
           {
-            "@realm/babel-plugin": {
-              "PACKAGE_PATH": "packages/babel-plugin",
-              "PREPARE_SCRIPT_NAME": "bundle",
-              "PACKAGE_NAME": "@realm/babel-plugin",
-              "VERSION_PREFIX": "babel-plugin-",
-              "RELEASE_TITLE": "Realm Babel Plugin",
-              "SDK_NAME": "Babel Plugin"
-            },
             "@realm/common": {
               "PACKAGE_PATH": "packages/realm-common",
               "PREPARE_SCRIPT_NAME": "bundle",
@@ -56,10 +46,10 @@ jobs:
               "RELEASE_TITLE": "Realm Common",
               "SDK_NAME": "Common"
             },
-            "@realm/react": {
+            "@innovapptive.com/realm-react": {
               "PACKAGE_PATH": "packages/realm-react",
               "PREPARE_SCRIPT_NAME": "bundle",
-              "PACKAGE_NAME": "@realm/react",
+              "PACKAGE_NAME": "@innovapptive.com/realm-react",
               "VERSION_PREFIX": "realm-react-",
               "RELEASE_TITLE": "Realm React",
               "SDK_NAME": "React"
@@ -79,14 +69,6 @@ jobs:
               "VERSION_PREFIX": "realm-web-",
               "RELEASE_TITLE": "Realm Web",
               "SDK_NAME": "Web"
-            },
-            "@realm/fetch": {
-              "PACKAGE_PATH": "packages/fetch",
-              "PREPARE_SCRIPT_NAME": "build",
-              "PACKAGE_NAME": "@realm/fetch",
-              "VERSION_PREFIX": "realm-fetch-",
-              "RELEASE_TITLE": "Realm Fetch",
-              "SDK_NAME": "Fetch"
             }
           }
 
