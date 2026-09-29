@@ -17,8 +17,7 @@
     "noResolve": true,
     "types": [
       "bson",
-      "debug",
-      "@realm/fetch"
+      "debug"
     ]
   },
   "include": [

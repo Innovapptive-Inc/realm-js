@@ -6,8 +6,7 @@
       "es2020"
     ],
     "types": [
-      "bson",
-      "@realm/fetch"
+      "bson"
     ]
   },
   "include": [
