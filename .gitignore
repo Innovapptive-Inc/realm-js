@@ -87,6 +87,9 @@ integration-tests/**/.lock
 # Credentials for the BaaS test server
 integration-tests/baas-test-server/.env
 
+# npm auth token override (token supplied via NPM_AUTH_TOKEN env var)
+.env
+
 # Test coverage artifacts
 coverage/
 .nyc_output/
