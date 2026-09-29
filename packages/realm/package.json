@@ -1,5 +1,5 @@
 {
-  "name": "realm",
+  "name": "@innovapptive.com/realm",
   "version": "20.2.0",
   "description": "Realm by MongoDB is an offline-first mobile database: an alternative to SQLite and key-value stores",
   "license": "apache-2.0",
@@ -61,6 +61,8 @@
     "bindgen/vendor/realm-core/bindgen/src/realm_helpers.h",
     "prebuilds/apple",
     "prebuilds/android",
+    "prebuilds/realm-*.tar.gz",
+    "prebuilds/@innovapptive.com/*.tar.gz",
     "index.react-native.js",
     "react-native.config.js",
     "RealmJS.podspec",
@@ -72,6 +74,7 @@
     "test:types": "tsc --project type-tests/tsconfig.json",
     "lint": "eslint --ext .js,.mjs,.ts .",
     "prebuild": "tsx ./src/scripts/build/cli.ts",
+    "apply-core-patches": "wireit",
     "prebuild-apple": "wireit",
     "prebuild-apple:simulator": "wireit",
     "prebuild-android": "wireit",
@@ -82,15 +85,16 @@
     "bindgen:wrapper": "wireit",
     "check-types": "wireit",
     "check-circular-imports": "wireit",
-    "install": "prebuild-install --runtime napi || echo 'Failed to download prebuild for Realm'",
-    "docs": "wireit",
-    "postinstall": "node ./scripts/submit-analytics.js"
+    "install": "node ./scripts/install-node-prebuild.js",
+    "docs": "wireit"
   },
   "wireit": {
+    "apply-core-patches": {
+      "command": "node ./scripts/apply-core-patches.js"
+    },
     "test": {
       "command": "mocha --exit",
       "dependencies": [
-        "../fetch:build",
         "build:node",
         "bindgen:wrapper"
       ],
@@ -100,6 +104,9 @@
     },
     "prebuild-apple": {
       "command": "tsx ./src/scripts/build/cli.ts build-apple",
+      "dependencies": [
+        "apply-core-patches"
+      ],
       "files": [
         "bindgen/vendor/realm-core/src",
         "src/scripts"
@@ -110,6 +117,9 @@
     },
     "prebuild-apple:simulator": {
       "command": "tsx ./src/scripts/build/cli.ts build-apple --platform iphonesimulator --configuration Debug",
+      "dependencies": [
+        "apply-core-patches"
+      ],
       "files": [
         "bindgen/vendor/realm-core/src",
         "src/scripts"
@@ -120,6 +130,9 @@
     },
     "prebuild-android": {
       "command": "tsx ./src/scripts/build/cli.ts build-android",
+      "dependencies": [
+        "apply-core-patches"
+      ],
       "files": [
         "bindgen/vendor/realm-core/src",
         "src/scripts"
@@ -131,12 +144,14 @@
     "build:ts": {
       "command": "tsc --build",
       "dependencies": [
-        "../fetch:build",
         "bindgen:wrapper"
       ]
     },
     "bindgen:configure": {
-      "command": "cmake-js configure --debug --directory binding/node"
+      "command": "cmake-js configure --debug --directory binding/node",
+      "dependencies": [
+        "apply-core-patches"
+      ]
     },
     "bindgen:build:node": {
       "command": "cmake --build binding/node/build --target realm-js-node",
@@ -199,11 +214,14 @@
       ]
     },
     "prebuild-node": {
-      "command": "cross-env-shell prebuild --runtime napi --arch $PREBUILD_ARCH -- --directory binding/node",
+      "command": "cross-env-shell prebuild --runtime napi --target 6 --arch $PREBUILD_ARCH -- --directory binding/node",
+      "dependencies": [
+        "apply-core-patches"
+      ],
       "env": {
         "PREBUILD_ARCH": {
           "external": true,
-          "default": "undefined"
+          "default": "arm64"
         }
       }
     },
@@ -216,7 +234,6 @@
     "check-circular-imports": {
       "command": "madge --circular --extensions ts src",
       "dependencies": [
-        "../fetch:build",
         "bindgen:generate:typescript",
         "bindgen:generate:node-wrapper",
         "bindgen:generate:react-native-wrapper",
@@ -231,7 +248,6 @@
     }
   },
   "dependencies": {
-    "@realm/fetch": "^0.1.1",
     "bson": "^4.7.2",
     "debug": "^4.3.4",
     "node-machine-id": "^1.1.12",
@@ -266,16 +282,18 @@
   "engines": {
     "node": ">=18"
   },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/realm/realm-js.git",
+    "url": "https://github.com/Innovapptive-Inc/realm-js.git",
     "directory": "packages/realm"
   },
   "binary": {
     "module_name": "realm",
     "module_path": "prebuilds/node",
-    "host": "https://static.realm.io",
-    "remote_path": "realm-js-prebuilds/{version}",
     "napi_versions": [
       6
     ]
