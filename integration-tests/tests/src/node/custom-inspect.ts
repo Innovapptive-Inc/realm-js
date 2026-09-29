@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 import { inspect } from "node:util";
 
 import { openRealmBefore } from "../hooks";

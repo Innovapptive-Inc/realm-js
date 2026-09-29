@@ -19,7 +19,7 @@
 import { act, fireEvent, render, waitFor } from "@testing-library/react-native";
 import React, { useEffect, useState } from "react";
 import { FlatList, ListRenderItem, Text, TextInput, TouchableHighlight, View } from "react-native";
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 
 import { createUseObject } from "../useObject";
 import { randomRealmPath } from "./helpers";

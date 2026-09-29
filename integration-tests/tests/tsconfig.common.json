@@ -15,7 +15,7 @@
 			"es2022"
 		],
 		"types": [
-			"realm",
+			"@innovapptive.com/realm",
 			"bson",
 			"buffer",
 			"mocha",

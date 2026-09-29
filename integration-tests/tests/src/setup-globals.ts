@@ -74,7 +74,7 @@ describe("Test Harness", function (this: Mocha.Suite) {
   Context.prototype.longTimeout = longTimeout;
 });
 
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 
 // Disable the logger to avoid console flooding
 const { defaultLogLevel = "off" } = environment;

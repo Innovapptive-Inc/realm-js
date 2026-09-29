@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm, { BSON, ObjectSchema } from "realm";
+import Realm, { BSON, ObjectSchema } from '@innovapptive.com/realm';
 import { expect } from "chai";
 
 import { openRealmBefore, openRealmBeforeEach } from "../hooks";

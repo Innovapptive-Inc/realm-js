@@ -7,7 +7,6 @@
       "es2021",
     ],
     "types": [
-      "realm",
       "react"
     ],
     "esModuleInterop": true,
