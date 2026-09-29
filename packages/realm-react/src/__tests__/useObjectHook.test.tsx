@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 import { renderHook } from "@testing-library/react-native";
 import assert from "node:assert";
 

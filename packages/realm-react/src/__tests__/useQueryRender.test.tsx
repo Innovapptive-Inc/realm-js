@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 import { act, fireEvent, render, waitFor } from "@testing-library/react-native";
 import { FlatList, ListRenderItem, Text, TextInput, TouchableHighlight, View } from "react-native";
 

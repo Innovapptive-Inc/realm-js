@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 import { openRealmBeforeEach } from "../hooks";
 
 describe("Sets", () => {

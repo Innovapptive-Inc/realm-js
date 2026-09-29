@@ -1,0 +1,65 @@
+diff --git a/src/external/s2/base/macros.h b/src/external/s2/base/macros.h
+index eaf28febb..4ea2aa290 100644
+--- a/src/external/s2/base/macros.h
++++ b/src/external/s2/base/macros.h
+@@ -160,10 +160,9 @@ char (&ArraySizeHelper(const T (&array)[N]))[N];
+ // protected members, or virtual functions, and all of its member
+ // variables must themselves be PODs.
+ 
++// Specializing std::is_pod is undefined behavior and newer Clang rejects it
++// (-Winvalid-specialization). Nothing in Realm queries is_pod, so this is a no-op.
+ #define DECLARE_POD(TypeName)                       \
+-namespace std {                                    \
+-template<> struct is_pod<TypeName> : true_type { }; \
+-}                                                   \
+ typedef int Dummy_Type_For_DECLARE_POD              \
+ 
+ // We once needed a different technique to assert that a nested class
+@@ -177,9 +176,6 @@ typedef int Dummy_Type_For_DECLARE_POD              \
+ 
+ // Declare that TemplateName<T> is a POD whenever T is
+ #define PROPAGATE_POD_FROM_TEMPLATE_ARGUMENT(TemplateName)             \
+-namespace std {                                                       \
+-template <typename T> struct is_pod<TemplateName<T> > : std::is_trivial<T> { }; \
+-}                                                                      \
+ typedef int Dummy_Type_For_PROPAGATE_POD_FROM_TEMPLATE_ARGUMENT
+ 
+ // Macro that does nothing if TypeName is a POD, and gives a compiler
+diff --git a/src/external/s2/s2polyline.cc b/src/external/s2/s2polyline.cc
+index e74aaa7c4..68f896731 100644
+--- a/src/external/s2/s2polyline.cc
++++ b/src/external/s2/s2polyline.cc
+@@ -442,22 +442,18 @@ struct SearchState {
+   int j;
+   bool i_in_progress;
+ };
+-}  // namespace
+ 
+-namespace std {
+-template<>
+-struct less<SearchState> {
+-  // This operator is needed for storing SearchStates in a set.  The ordering
+-  // chosen has no special meaning.
+-  inline bool operator()(SearchState const& lhs, SearchState const& rhs) const {
+-    if (lhs.i < rhs.i) return true;
+-    if (lhs.i > rhs.i) return false;
+-    if (lhs.j < rhs.j) return true;
+-    if (lhs.j > rhs.j) return false;
+-    return !lhs.i_in_progress && rhs.i_in_progress;
+-  }
+-};
+-}  // namespace std
++// This operator is needed for storing SearchStates in a set.  The ordering
++// chosen has no special meaning.  It used to be a std::less<SearchState>
++// specialization, which newer libc++ bypasses when comparing set keys.
++inline bool operator<(SearchState const& lhs, SearchState const& rhs) {
++  if (lhs.i < rhs.i) return true;
++  if (lhs.i > rhs.i) return false;
++  if (lhs.j < rhs.j) return true;
++  if (lhs.j > rhs.j) return false;
++  return !lhs.i_in_progress && rhs.i_in_progress;
++}
++}  // namespace
+ 
+ bool S2Polyline::NearlyCoversPolyline(S2Polyline const& covered,
+                                       S1Angle const& max_error) const {

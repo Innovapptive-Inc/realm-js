@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 import { useContext } from "react";
 
 export type UseRealmHook = {

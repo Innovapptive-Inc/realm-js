@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { expect } from "chai";
-import Realm, { Counter } from "realm";
+import Realm, { Counter } from '@innovapptive.com/realm';
 
 export function expectRealmList(value: unknown): asserts value is Realm.List<unknown> {
   expect(value).instanceOf(Realm.List);

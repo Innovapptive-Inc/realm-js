@@ -17,7 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
 
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
-import Realm from "realm";
+import Realm from '@innovapptive.com/realm';
 
 import { createCachedCollection } from "./cachedCollection";
 import { AnyRealmObject, RealmClassType, getObjects, isClassModelConstructor } from "./helpers";

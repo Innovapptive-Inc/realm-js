@@ -1,5 +1,5 @@
 {
-  "name": "@realm/react",
+  "name": "@innovapptive.com/realm-react",
   "version": "0.20.0",
   "description": "React specific hooks and implementation helpers for Realm",
   "type": "module",
@@ -64,12 +64,12 @@
     "react": "19.1.1",
     "react-native": "0.80.2",
     "react-test-renderer": "19.1.1",
-    "realm": "*",
+    "@innovapptive.com/realm": "*",
     "ts-jest": "^29.1.2"
   },
   "peerDependencies": {
     "react": ">=17.0.2",
-    "realm": ">=20.0.0"
+    "@innovapptive.com/realm": ">=20.0.0"
   },
   "optionalDependencies": {
     "@babel/runtime": ">=7",
@@ -93,14 +93,18 @@
     "email": "help@realm.io",
     "url": "https://www.mongodb.com/docs/realm/"
   },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/realm/realm-js.git",
+    "url": "https://github.com/Innovapptive-Inc/realm-js.git",
     "directory": "packages/realm-react"
   },
-  "homepage": "https://github.com/realm/realm-js/tree/main/packages/realm-react#readme",
+  "homepage": "https://github.com/Innovapptive-Inc/realm-js/tree/innovapptive/community/packages/realm-react#readme",
   "bugs": {
-    "url": "https://github.com/realm/realm-js/issues"
+    "url": "https://github.com/Innovapptive-Inc/realm-js/issues"
   },
   "license": "Apache-2.0",
   "dependencies": {

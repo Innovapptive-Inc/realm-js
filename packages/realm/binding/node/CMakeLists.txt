@@ -9,9 +9,11 @@ set(BINDING_DIR ${SDK_DIR}/binding)
 
 if(CMAKE_HOST_SYSTEM_NAME STREQUAL "Windows")
     set(CMAKE_SYSTEM_VERSION 8.1)
-    if(CMAKE_GENERATOR_PLATFORM MATCHES "^[Ww][Ii][Nn]32$")
+    # Visual Studio generators set CMAKE_GENERATOR_PLATFORM; Ninja does not, so fall back
+    # to the Node.js target architecture passed by cmake-js.
+    if(CMAKE_GENERATOR_PLATFORM MATCHES "^[Ww][Ii][Nn]32$" OR (NOT CMAKE_GENERATOR_PLATFORM AND NODE_ARCH STREQUAL "ia32"))
         set(VCPKG_TARGET_TRIPLET "x86-windows-static" CACHE STRING "")
-    elseif(CMAKE_GENERATOR_PLATFORM MATCHES "^[Xx]64$")
+    elseif(CMAKE_GENERATOR_PLATFORM MATCHES "^[Xx]64$" OR (NOT CMAKE_GENERATOR_PLATFORM AND NODE_ARCH STREQUAL "x64"))
         set(VCPKG_TARGET_TRIPLET "x64-windows-static" CACHE STRING "")
     else()
         message(FATAL_ERROR "Unable to deduce vcpkg target triplet (from '${NODE_ARCH}')")
